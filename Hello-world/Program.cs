@@ -2,9 +2,17 @@
 var name = string.Empty;
 
 if (!args.Any())
-    name = "guest";
+{
+    WriteLine("What is your name?");
+    name = ReadLine();
+    if(string.IsNullOrEmpty(name))
+        name = "guest";
+}
 else
+{
     name = string.Join(" ", args);
+}
+    
 
-WriteLine($"Hello, {name}!");
+WriteLine($"Hello, {name}! Now you are a c# programer!");
 ReadLine();
